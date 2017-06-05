@@ -1,0 +1,46 @@
+<nav class="w3-top ">
+<div class="container-fluid">
+<ul class="w3-navbar w3-white w3-large">  
+
+
+
+<?php ; 
+
+//include_once "//localhost/ostalo/common/base.php";
+
+ $path = $_SERVER['DOCUMENT_ROOT'];
+   $path .= "/ostalo/common/base.php";
+   include_once($path);
+
+ if(isset($_SESSION['LoggedIn']) && isset($_SESSION['Username'])
+        && $_SESSION['LoggedIn']==1):
+    
+
+?>
+		<li><a href="<?php echo P; ?>" class="w3-food-banana"><i class="fa fa-bed w3-margin-right"></i>Dom Svete Ane</a></li>
+		<li><a href="" >Sobe</a></li>
+		<li><a href="<?php echo P; ?>korisnici/">Korisnici</a></li>
+		<li><a href="<?php echo P; ?>korisnici/portfolio.php">Zaposlenici</a></li>  
+		<li> </li>
+		
+		<ul class="w3-navbar w3-white w3-large navbar-right">
+		
+		 <li class="w3-navitem">  <?php echo $_SESSION['Username']; ?>  </li>
+      <li><a href="<?php echo P; ?>korisnici/portfolio.php"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+      <li><a href="<?php echo P; ?>logout.php"><span class="glyphicon glyphicon-log-in"></span> Odjava </a></li>
+    </ul>
+	
+		 
+		
+
+		
+<?php else: ?>
+		<li><a href="#" class="w3-food-banana"><i class="fa fa-bed w3-margin-right"></i>Dom Svete Ane</a></li>
+                
+
+				
+				
+<?php endif; ?>
+ </div>
+</ul>
+</nav>
